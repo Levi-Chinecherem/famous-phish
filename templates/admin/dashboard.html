@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4 mb-4">Charts</h1>
+    <div class="row">
+        <div class="col-lg-6 col-md-8">
+            <div class="chart card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Phishing Attempts by Type</h2>
+                    <p class="card-text">This chart shows the distribution of phishing attempts by their types.</p>
+                    <img src="data:image/png;base64,{{ chart1_url }}" alt="Chart 1" class="chart-img img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8">
+            <div class="chart card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Phishing Attempts by IP Address</h2>
+                    <p class="card-text">This chart displays the count of phishing attempts originating from different IP addresses.</p>
+                    <img src="data:image/png;base64,{{ chart2_url }}" alt="Chart 2" class="chart-img img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-8">
+            <div class="chart card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Phishing Attempts by Success</h2>
+                    <p class="card-text">This chart illustrates the distribution of phishing attempts by their success status.</p>
+                    <img src="data:image/png;base64,{{ chart3_url }}" alt="Chart 3" class="chart-img img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Include Chart.js via CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Include your custom JavaScript file -->
+<script src="{% static 'admin/dashboard.js' %}"></script>
+
+<script>
+    $(document).ready(function() {
+        // Animate chart elements when they come into view
+        $(".chart-img").each(function() {
+            $(this).waypoint({
+                handler: function(direction) {
+                    if (direction === "down") {
+                        $(this.element).addClass("animate");
+                    }
+                },
+                offset: "90%"
+            });
+        });
+
+        // Initialize and configure your charts here using Chart.js
+        var ctx1 = document.getElementById("chart1").getContext("2d");
+        var chart1 = new Chart(ctx1, {
+            // Your chart configuration for Chart 1
+        });
+
+        var ctx2 = document.getElementById("chart2").getContext("2d");
+        var chart2 = new Chart(ctx2, {
+            // Your chart configuration for Chart 2
+        });
+
+        var ctx3 = document.getElementById("chart3").getContext("2d");
+        var chart3 = new Chart(ctx3, {
+            // Your chart configuration for Chart 3
+        });
+
+        // Initialize and configure the new pie charts here
+        var ctxAll = document.getElementById("chart-all").getContext("2d");
+        var chartAll = new Chart(ctxAll, {
+            type: "pie",
+            data: {
+                labels: {{ chart4_labels|safe }},
+                datasets: [{
+                    data: {{ chart4_values|safe }},
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1000,
+                },
+            },
+        });
+
+        var ctxAllSuccess = document.getElementById("chart-all-success").getContext("2d");
+        var chartAllSuccess = new Chart(ctxAllSuccess, {
+            type: "pie",
+            data: {
+                labels: ["Successful", "Unsuccessful"],
+                datasets: [{
+                    data: {{ chart3_values|safe }},
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1000,
+                },
+            },
+        });
+        // Initialize and configure the new pie charts here
+    var ctxAll = document.getElementById("chart-all").getContext("2d");
+    var chartAll = new Chart(ctxAll, {
+        type: "pie",
+        data: {
+            labels: {{ chart4_labels|safe }},
+            datasets: [{
+                data: {{ chart4_values|safe }},
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 1000,
+            },
+        },
+    });
+
+    var ctxAllSuccess = document.getElementById("chart-all-success").getContext("2d");
+    var chartAllSuccess = new Chart(ctxAllSuccess, {
+        type: "pie",
+        data: {
+            labels: ["Successful", "Unsuccessful"],
+            datasets: [{
+                data: {{ chart3_values|safe }},
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+                duration: 1000,
+            },
+        },
+    });
+
+    });
+
+</script>
+{% endblock %}

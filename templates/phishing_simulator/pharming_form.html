@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Pharming Attempt{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Pharming Simulator</h2>
+            <div class="alert alert-info">
+                <p><strong>What is Pharming?</strong></p>
+                <p>
+                    Pharming is a type of cyber attack where attackers manipulate DNS settings
+                    or use malicious software to redirect users to fake websites, often for the purpose
+                    of stealing sensitive information.
+                </p>
+            </div>
+            <div class="alert alert-warning">
+                <p><strong>How Pharming Works:</strong></p>
+                <p>
+                    Attackers can alter DNS records or use malware to modify a user's hosts file,
+                    causing their computer to connect to a fraudulent website instead of the legitimate one.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <p><strong>Simulating a Successful Pharming Attempt:</strong></p>
+                <p>
+                    To simulate a successful pharming attempt, enter a URL that corresponds to a fraudulent website.
+                    This would be a website that attackers are attempting to impersonate.
+                    <br> for this project just type "fraudulent-website.com", any other input defaults to failure.
+                </p>
+            </div>
+            <div class="alert alert-danger">
+                <p><strong>Simulating a Failed Pharming Attempt:</strong></p>
+                <p>
+                    To simulate a failed pharming attempt, enter a URL that is legitimate and not associated with
+                    a phishing or fraudulent website.
+                </p>
+            </div>
+            <div class="alert alert-info">
+                <p><strong>Preventing Pharming Attacks:</strong></p>
+                <ul>
+                    <li>Regularly update your computer's operating system and software.</li>
+                    <li>Use trusted and up-to-date antivirus and anti-malware software.</li>
+                    <li>Be cautious when clicking on links in emails or messages, especially if they look suspicious.</li>
+                    <li>Verify the URL of websites, especially when entering sensitive information.</li>
+                    <li>Use a reputable DNS service provider.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Pharming Simulator</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="url">Enter a URL</label>
+                            <input type="text" class="form-control" id="url" name="url" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Check</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

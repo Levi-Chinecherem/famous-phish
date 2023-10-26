@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Smishing Attempt{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Smishing Simulator</h2>
+            <div class="alert alert-info">
+                <p><strong>What is Smishing?</strong></p>
+                <p>
+                    Smishing is a form of phishing attack that occurs via SMS (Short Message Service) or text messages.
+                    Attackers send deceptive messages that often contain malicious links or ask for sensitive information.
+                </p>
+            </div>
+            <div class="alert alert-warning">
+                <p><strong>How Smishing Works:</strong></p>
+                <p>
+                    Attackers send SMS messages that appear to be from legitimate sources or organizations.
+                    These messages may contain a link that leads to a fraudulent website, a phone number to call,
+                    or a request for sensitive information.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <p><strong>Simulating a Successful Smishing Attempt:</strong></p>
+                <p>
+                    To simulate a successful smishing attempt, enter a message that contains a keyword or phrase
+                    typically used in a smishing attack. For example, use a message that asks for sensitive information
+                    like credit card details.
+                    <br> for this project just type "smishing code", any other input defaults to failure.
+                </p>
+            </div>
+            <div class="alert alert-danger">
+                <p><strong>Simulating a Failed Smishing Attempt:</strong></p>
+                <p>
+                    To simulate a failed smishing attempt, enter a message that does not contain any elements of a
+                    smishing attack. For example, a casual greeting message with no request for information.
+                </p>
+            </div>
+            <div class="alert alert-info">
+                <p><strong>Preventing Smishing Attacks:</strong></p>
+                <ul>
+                    <li>Always be cautious of unsolicited SMS messages, especially those asking for personal information.</li>
+                    <li>Verify the sender's identity and the authenticity of the message.</li>
+                    <li>Avoid clicking on links or calling phone numbers from unknown sources.</li>
+                    <li>Install security apps that can detect and block smishing attempts.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Smishing Simulator</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="sms_message">Received SMS Message</label>
+                            <textarea class="form-control" id="sms_message" name="sms_message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Check</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Phishing Attempt{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Phishing Simulator</h2>
+            <div class="alert alert-info">
+                <p><strong>What is Phishing?</strong></p>
+                <p>
+                    Phishing is a type of cyber attack where attackers impersonate legitimate entities
+                    to trick individuals into revealing sensitive information such as login credentials,
+                    financial details, or personal information.
+                </p>
+            </div>
+            <div class="alert alert-warning">
+                <p><strong>How Phishing Works:</strong></p>
+                <p>
+                    Attackers send deceptive emails or messages that appear to be from reputable sources,
+                    aiming to trick recipients into clicking malicious links or downloading malicious attachments.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <p><strong>Simulating a Successful Phishing Attempt:</strong></p>
+                <p>
+                    To simulate a successful phishing attempt, enter a user input that contains a keyword or phrase
+                    typically used in phishing attacks. For example, use an input that appears to be a legitimate
+                    username and password.
+                    <br> for this project just type "phishing keyword", any other input defaults to failure.
+                </p>
+            </div>
+            <div class="alert alert-danger">
+                <p><strong>Simulating a Failed Phishing Attempt:</strong></p>
+                <p>
+                    To simulate a failed phishing attempt, enter a user input that does not contain any elements of a
+                    phishing attack. For example, a simple greeting or non-sensitive text.
+                </p>
+            </div>
+            <div class="alert alert-info">
+                <p><strong>Preventing Phishing Attacks:</strong></p>
+                <ul>
+                    <li>Always be cautious when receiving unsolicited emails or messages, especially if they ask for sensitive information.</li>
+                    <li>Verify the sender's identity and the authenticity of the communication before taking any action.</li>
+                    <li>Use security software and keep it up to date.</li>
+                    <li>Educate yourself and stay informed about the latest phishing techniques.</li>
+                    <li>Regularly update your operating system and software to patch vulnerabilities.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Phishing Simulator</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="user_input">User Input</label>
+                            <input type="text" class="form-control" id="user_input" name="user_input" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

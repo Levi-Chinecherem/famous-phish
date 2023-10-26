@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Famous Phish{% endblock %}</title>
+    <!-- Add Bootstrap 4 CSS link here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+    <style>
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar ml-4 mr-4 navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="{% url 'home' %}">🐟?</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'phishing_attempt' %}">Phishing Simulator</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'smishing' %}">Smishing</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'pharming' %}">Pharming</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'ceo_fraud' %}">CEO Fraud</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="{% url 'custom_admin_dashboard' %}">Charts</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mt-4">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-muted">Famous 🐟Phish &copy; 2023</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Add Bootstrap 4 JavaScript and jQuery links here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* Add responsive styles for the dashboard */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.chart {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart h2 {
+    font-size: 1.5rem;
+}
+
+.chart-description {
+    font-size: 1rem;
+}
+
+.chart-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .chart {
+        margin: 10px 0;
+    }
+
+    .chart h2 {
+        font-size: 1.2rem;
+    }
+
+    .chart-description {
+        font-size: 0.9rem;
+    }
+}

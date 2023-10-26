@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}CEO Fraud Attempt{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>CEO Fraud Simulator</h2>
+            <div class="alert alert-info">
+                <p><strong>What is CEO Fraud (Business Email Compromise)?</strong></p>
+                <p>
+                    CEO Fraud, also known as Business Email Compromise (BEC), is a type of cyber attack
+                    where attackers impersonate company executives or leaders to trick employees into taking
+                    unauthorized actions, such as transferring funds or sharing sensitive information.
+                </p>
+            </div>
+            <div class="alert alert-warning">
+                <p><strong>How CEO Fraud Works:</strong></p>
+                <p>
+                    Attackers use social engineering techniques to craft convincing emails that appear to come
+                    from a high-ranking executive within the company. These emails often contain urgent requests
+                    for financial transactions or sensitive data.
+                </p>
+            </div>
+            <div class="alert alert-success">
+                <p><strong>Simulating a Successful CEO Fraud Attempt:</strong></p>
+                <p>
+                    To simulate a successful CEO Fraud attempt, enter an email message that mimics a convincing
+                    request from a company executive. Make it appear urgent and persuasive.
+                    <br> for this project just type "CEO's urgent request", any other input defaults to failure.
+                </p>
+            </div>
+            <div class="alert alert-danger">
+                <p><strong>Simulating a Failed CEO Fraud Attempt:</strong></p>
+                <p>
+                    To simulate a failed CEO Fraud attempt, enter an email message that is not convincing or does
+                    not resemble an urgent request from a company executive.
+                </p>
+            </div>
+            <div class="alert alert-info">
+                <p><strong>Preventing CEO Fraud (BEC) Attacks:</strong></p>
+                <ul>
+                    <li>Always verify the authenticity of email requests for financial transactions or sensitive data.</li>
+                    <li>Implement multi-factor authentication (MFA) for financial transactions.</li>
+                    <li>Educate employees about CEO Fraud and provide training to recognize suspicious emails.</li>
+                    <li>Have clear policies and procedures for verifying and authorizing financial transactions.</li>
+                    <li>Use email security solutions to detect and filter out phishing emails.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">CEO Fraud Simulator</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email_message">Received Email Message</label>
+                            <textarea class="form-control" id="email_message" name="email_message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Check</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
