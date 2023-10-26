@@ -1,6 +1,6 @@
-Phishing Attack Simulator
+# Phishing Attack Simulator
 
-![Phishing Attack Simulator Logo](images/logo.png)
+![Phishing Attack Simulator Logo](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/p1.png)
 
 The Phishing Attack Simulator is a web-based application that allows users to simulate and detect phishing attacks, smishing (SMS phishing) attempts, pharming attacks, and CEO fraud emails. This README provides detailed information about the system, its features, installation, and usage.
 
@@ -34,7 +34,7 @@ The Phishing Attack Simulator is a web-based application that allows users to si
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/phishing-attack-simulator.git
+   git clone https://github.com/Levi-Chinecherem/famous-phish
    ```
 2. Create a virtual environment (recommended) and activate it:
 
@@ -74,7 +74,7 @@ The system will be accessible at `http://127.0.0.1:8000/`.
 2. Enter user input that may contain phishing keywords.
 3. Submit the form to simulate a phishing attack. You'll receive a success or failure message based on the keywords entered.
 
-![Phishing Simulator Screenshot](images/phishing_simulator.png)
+![Phishing Simulator Screenshot](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/p2.png)
 
 ### Simulating Smishing Attacks
 
@@ -82,7 +82,7 @@ The system will be accessible at `http://127.0.0.1:8000/`.
 2. Enter an SMS message that may contain smishing keywords.
 3. Submit the form to simulate a smishing attack and receive a success or failure message.
 
-![Smishing Simulator Screenshot](images/smishing_simulator.png)
+![Smishing Simulator Screenshot](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/p3.png)
 
 ### Simulating Pharming Attacks
 
@@ -90,7 +90,7 @@ The system will be accessible at `http://127.0.0.1:8000/`.
 2. Enter a URL that may be a fraudulent website.
 3. Submit the form to simulate a pharming attack and receive a success or failure message.
 
-![Pharming Simulator Screenshot](images/pharming_simulator.png)
+![Pharming Simulator Screenshot](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/p4.png)
 
 ### Simulating CEO Fraud
 
@@ -98,7 +98,7 @@ The system will be accessible at `http://127.0.0.1:8000/`.
 2. Enter an email message that may indicate CEO fraud.
 3. Submit the form to simulate a CEO fraud attempt and receive a success or failure message.
 
-![CEO Fraud Simulator Screenshot](images/ceo_fraud_simulator.png)
+![CEO Fraud Simulator Screenshot](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/p5.png)
 
 ## Custom Admin Dashboard
 
@@ -108,7 +108,7 @@ The system includes a custom admin dashboard for administrators to monitor and v
 - Bar chart showing the top 10 IP addresses with the highest attack count.
 - Pie chart showing the success vs. failure ratio for all attacks.
 
-![Custom Admin Dashboard Screenshot](images/admin_dashboard.png)
+![Custom Admin Dashboard Screenshot](https://github.com/Levi-Chinecherem/famous-phish/blob/main/OUTPUT/admin.png)
 
 ## Contributing
 
